@@ -1,9 +1,12 @@
 import React from 'react'
-import {Container, Content } from 'native-base';
-import { common } from '../assets/styles';
+import { ScrollView } from 'react-native'
+import {Container, View } from 'native-base';
+import { common, COLOR_BLUE } from '../assets/styles';
 
 import ActionButtonMenu from '../components/actionbutton';
 import { HeaderComponent } from '../components/header';
+import { HighCharts } from '../components/charts/Highcharts';
+import { BarChart } from '../components/charts/BarChart';
 
 export default class Home extends React.Component {
     static navigationOptions = {
@@ -14,11 +17,17 @@ export default class Home extends React.Component {
         
         return(
             <Container style={common.bgWhite} >
-                <HeaderComponent openDrawer={openDrawer}/>            
-                <Content>
-                    
-                </Content>
-                <ActionButtonMenu />
+                <HeaderComponent openDrawer={openDrawer}/>
+                
+                <ActionButtonMenu>
+                    <View>
+                        <ScrollView>
+                            <HighCharts />
+
+                            <BarChart />
+                        </ScrollView>
+                    </View>
+                </ActionButtonMenu>
             </Container>
         )
     }

@@ -19,7 +19,8 @@ export default class LoginAuth extends React.Component {
     }
 
     submit = () => {
-        this.props.login(this.state.email, this.state.senha, this.props.history.push)
+        this.props.history.push('/main')
+        //this.props.login(this.state.email, this.state.senha, this.props.history.push)
     }
 
     render() {
