@@ -145,7 +145,6 @@ export const login = StyleSheet.create({
     form_container: {
         flex: 1,
         alignItems: 'center',
-        marginHorizontal: 10,
         backgroundColor: COLOR_WHITE
     },
     input_wrapper: {
