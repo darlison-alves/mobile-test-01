@@ -30,7 +30,7 @@ export default class LoginAuth extends React.Component {
                 <Image source={logoImg}/>
             </View>
             <KeyboardAvoidingView
-                behavior='padding'
+                behavior='height'
                 style={login.form_container}
             >
                 {
