@@ -1,10 +1,12 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 
 import auth from './reducers/auth'
+import datas from './reducers/charts'
 import thunk from "redux-thunk";
 
 const reducers = combineReducers({
-    auth
+    auth,
+    datas
 })
 
 

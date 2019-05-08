@@ -5,10 +5,14 @@ import { common, COLOR_BLUE } from '../assets/styles';
 
 import ActionButtonMenu from '../components/actionbutton';
 import { HeaderComponent } from '../components/header';
-import { HighCharts } from '../components/charts/Highcharts';
-import { BarChart } from '../components/charts/BarChart';
+import BarChartContainer from '../components/charts/BarChartContainer';
+import { ModalChart } from '../components/ModalChart';
 
 export default class Home extends React.Component {
+    state = {
+        visible : false
+    }
+
     static navigationOptions = {
         title: 'Home',
     };
@@ -19,12 +23,11 @@ export default class Home extends React.Component {
             <Container style={common.bgWhite} >
                 <HeaderComponent openDrawer={openDrawer}/>
                 
-                <ActionButtonMenu>
-                    <View>
+                <ActionButtonMenu setState={(visible) => this.setState({visible}) } >
+                    <View>                        
                         <ScrollView>
-                            <HighCharts />
-
-                            <BarChart />
+                            <ModalChart visible={this.state.visible} setState={(visible) => this.setState({visible})} />
+                            <BarChartContainer />
                         </ScrollView>
                     </View>
                 </ActionButtonMenu>

@@ -6,12 +6,12 @@ import { HighCharts } from './charts/Highcharts';
 
 export default class ActionButtonMenu extends React.Component {
     render() {
-        const { children } =this.props
+        const { children, setState } =this.props
         return(
             <View style={{flex: 1}} >
                 {children}
                 <ActionButton buttonColor="rgba(216,211,211,1)" >
-                    <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={() => console.log("notes tapped!")}>
+                    <ActionButton.Item buttonColor='#9b59b6' title="Novo chart" onPress={() => setState(true) }>
                         <Icon name="md-create" style={buttonAction.actionButtonIcon} />
                     </ActionButton.Item>
                 </ActionButton>
